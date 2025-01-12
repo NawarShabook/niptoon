@@ -125,13 +125,15 @@ class ShipmentController extends Controller
             'code_id' => 'string|max:20',
             'type' => 'in:ocean,air,lcl',
         ]);
+        $info = \App\Models\SystemSettings::first();
         $shipment=Shipment::where(["code_id"=>$request->code_id, "type"=>$request->type, "published"=>true])->first();
 
         if($shipment)
         {
+
             $last_updated=$this->getLastUpdated($shipment->id);
             $last_location=$this->getLastLocation($shipment->id);
-            return view('shipments.tracking', compact('shipment', 'last_updated', 'last_location'));
+            return view('shipments.tracking', compact('shipment', 'last_updated', 'last_location','info'));
         }
         else{
             $code_id='';
@@ -142,7 +144,7 @@ class ShipmentController extends Controller
             else{
                 $message="Please enter shipment id";
             }
-            return view('shipments.tracking', compact('code_id', 'message'));
+            return view('shipments.tracking', compact('code_id', 'message','info'));
         }
     }
 

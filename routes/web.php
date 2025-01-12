@@ -19,24 +19,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',function () {
-    return view('index');
+    $info = \App\Models\SystemSettings::first();
+    return view('index',compact('info'));
 })->name('index');
 
 
 Route::get('shipment-tracking', [ShipmentController::class,'track'])->name('shipments.tracking');
-
-Route::get('/our-services',function () {
-    return view('services');
-})->name('services');
-
-Route::get('/about-us',function () {
-    return view('about');
-})->name('about');
-
-
-Route::get('/contact-us',function () {
-    return view('contact');
-})->name('contact');
 
 
 Route::group(

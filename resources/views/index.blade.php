@@ -218,15 +218,17 @@ Niptoon Company | Main
                 <ul class="list-inline">
                     <li>
                         <h6 class="color-main"><i
-                                class="fas fa-envelope color-secondry mr-3 mt-3"></i>Niptoon@Niptoon.com</h6>
+                                class="fas fa-envelope color-secondry mr-3 mt-3"></i>Contact@Niptoon.com</h6>
                     </li>
                     <li>
-                        <h6 class="color-main"><i class="fa fa-phone-alt color-secondry mr-3 mt-3"></i>012345678
+                        <h6 class="color-main"><i class="fa fa-phone-alt color-secondry mr-3 mt-3"></i>{{$info->number}}
                         </h6>
                     </li>
                     <li>
-                        <h6 class="color-main"><i class="fas fa-map-marker-alt color-secondry mr-3 mt-3"></i>Turkey
-                            - Mersin</h6>
+                        <h6 class="color-main"><i class="fas fa-map-marker-alt color-secondry mr-3 mt-3"></i>{{explode("/",$info->location)[0]}}</h6>
+                    </li>
+                    <li>
+                        <h6 class="color-main"><i class="fas fa-map-marker-alt color-secondry mr-3 mt-3"></i>{{explode("/",$info->location)[1]}}</h6>
                     </li>
                 </ul>
             </div>

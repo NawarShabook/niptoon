@@ -5,9 +5,10 @@
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-light mb-4">Contact</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Turkey - Mersin</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>012 345 67890</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>Nawares@Nawares.com</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{{explode("/",$info->location)[0]}}</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{{explode("/",$info->location)[1]}}</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>{{$info->number}}</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>Contact@Niptoon.com</p>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-light mb-4">Quick Links</h4>
@@ -18,14 +19,14 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-light mb-4">Quick Overview</h4>
-                <p>Nawares is a leading logistics provider specializing in reliable shipping solutions. With a
+                <p>Niptoon is a leading logistics provider specializing in reliable shipping solutions. With a
                     commitment to excellence and customer satisfaction, we offer a range of services, including air,
                     ocean, and road freight. Our experienced team ensures that every shipment is handled with care
                     and efficiency, making us your trusted partner in logistics.</p>
             </div>
             <div class="col-lg-3 col-md-6">
-                <img src="imgs/icon-white.png" width="90" alt="icon-Nawares.png">
-                <p class="text-light mb-4">© 2024 Nawares. All rights reserved.</p>
+                <img src="imgs/icon-white.png" width="90" alt="icon-Niptoon.png">
+                <p class="text-light mb-4">© 2024 Niptoon. All rights reserved.</p>
             </div>
         </div>
     </div>

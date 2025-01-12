@@ -48,7 +48,7 @@ class RegionController extends Controller
             Region::create([
                 'first_name' => $request->first_name,
                 'second_name' => $request->second_name,
-                'location_link' => $request->location_link,
+                'location_link' => $request->location_link ?? '#',
                 'shipment_id' => $request->shipment_id,
             ]);
 
@@ -86,7 +86,12 @@ class RegionController extends Controller
 
         ]);
         try {
-            $region->update($request->only(['first_name', 'second_name','location_link']));
+            $region->update([
+                'first_name' => $request->first_name,
+                'second_name' => $request->second_name,
+                'location_link' => $request->location_link ?? '#',
+            ]);
+
             return back()->with('success','The Region Has Been Updated Successfully');
 
         } catch (\Throwable $th) {

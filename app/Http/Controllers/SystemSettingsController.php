@@ -22,13 +22,19 @@ class SystemSettingsController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
+        $request->validate([
+            'location' => 'required|string|max:255',
+            'number' => 'required|numeric',
+        ]);
+
         try {
             SystemSettings::truncate();
-            SystemSettings::create([$request]);
+            SystemSettings::create($request->all());
             return back()->with('success','info updated successfully');
 
         } catch (\Throwable $th) {
-            //
+            return back()->with('errors', $th->getMessage());
         }
     }
 }
