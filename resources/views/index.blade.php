@@ -224,12 +224,17 @@ Niptoon Company | Main
                         <h6 class="color-main"><i class="fa fa-phone-alt color-secondry mr-3 mt-3"></i>{{$info->number}}
                         </h6>
                     </li>
+
                     <li>
-                        <h6 class="color-main"><i class="fas fa-map-marker-alt color-secondry mr-3 mt-3"></i>{{explode("/",$info->location)[0]}}</h6>
+                        <h6 class="color-main"><i class="fas fa-map-marker-alt color-secondry mr-3 mt-3"></i>{{explode("/",$info->location)[0]??$info->location}}</h6>
                     </li>
-                    <li>
-                        <h6 class="color-main"><i class="fas fa-map-marker-alt color-secondry mr-3 mt-3"></i>{{explode("/",$info->location)[1]}}</h6>
-                    </li>
+
+                    @if (isset(explode("/",$info->location)[1]))
+                        <li>
+                            <h6 class="color-main"><i class="fas fa-map-marker-alt color-secondry mr-3 mt-3"></i>{{explode("/",$info->location)[1]??''}}</h6>
+                        </li>
+                    @endif
+
                 </ul>
             </div>
             <div class="col-lg-5">
