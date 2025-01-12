@@ -20,12 +20,6 @@
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>012 345 67890</p>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Frankfurt - Germany</p>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Izmir - Turkey</p>
-                        <li>
-                            <h6 class="color-main"><i class="fas fa-map-marker-alt color-secondry mr-3 mt-3"></i>Frankfurt - Germany</h6>
-                        </li>
-                        <li>
-                            <h6 class="color-main"><i class="fas fa-map-marker-alt color-secondry mr-3 mt-3"></i>Izmir - Turkey</h6>
-                        </li>
                     @endif
 
 
