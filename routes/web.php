@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',function () {
-    $info = \App\Models\SystemSettings::first();
+    $info = \App\Models\SystemSettings::firstOrCreate(['location','number'],['location','123']);
     return view('index',compact('info'));
 })->name('index');
 

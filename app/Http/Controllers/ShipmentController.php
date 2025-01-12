@@ -125,7 +125,7 @@ class ShipmentController extends Controller
             'code_id' => 'string|max:20',
             'type' => 'in:ocean,air,lcl',
         ]);
-        $info = \App\Models\SystemSettings::first();
+        $info = \App\Models\SystemSettings::firstOrCreate(['location','number'],['location','123']);
         $shipment=Shipment::where(["code_id"=>$request->code_id, "type"=>$request->type, "published"=>true])->first();
 
         if($shipment)
