@@ -5,12 +5,33 @@
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-light mb-4">Contact</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{{explode("/",$info->location)[0]??$info->location}}</p>
-                @if (isset(explode("/",$info->location)[1]))
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{{explode("/",$info->location)[1]}}</p>
-                @endif
 
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>{{$info->number}}</p>
+
+                @if (isset($info->location) && isset($info->number))
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>{{$info->number}}</p>
+
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{{explode("/",$info->location)[0]??$info->location}}</p>
+
+                    @if (isset(explode("/",$info->location)[1]))
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{{explode("/",$info->location)[1]}}</p>
+                    @endif
+
+                    @else
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>012 345 67890</p>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Frankfurt - Germany</p>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Izmir - Turkey</p>
+                        <li>
+                            <h6 class="color-main"><i class="fas fa-map-marker-alt color-secondry mr-3 mt-3"></i>Frankfurt - Germany</h6>
+                        </li>
+                        <li>
+                            <h6 class="color-main"><i class="fas fa-map-marker-alt color-secondry mr-3 mt-3"></i>Izmir - Turkey</h6>
+                        </li>
+                    @endif
+
+
+
+
+
                 <p class="mb-2"><i class="fa fa-envelope me-3"></i>Contact@Niptoon.com</p>
             </div>
             <div class="col-lg-3 col-md-6">

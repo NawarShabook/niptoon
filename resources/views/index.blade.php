@@ -220,18 +220,33 @@ Niptoon Company | Main
                         <h6 class="color-main"><i
                                 class="fas fa-envelope color-secondry mr-3 mt-3"></i>Contact@Niptoon.com</h6>
                     </li>
-                    <li>
-                        <h6 class="color-main"><i class="fa fa-phone-alt color-secondry mr-3 mt-3"></i>{{$info->number}}
-                        </h6>
-                    </li>
-
-                    <li>
-                        <h6 class="color-main"><i class="fas fa-map-marker-alt color-secondry mr-3 mt-3"></i>{{explode("/",$info->location)[0]??$info->location}}</h6>
-                    </li>
-
-                    @if (isset(explode("/",$info->location)[1]))
+                    @if (isset($info->location) && isset($info->number))
                         <li>
-                            <h6 class="color-main"><i class="fas fa-map-marker-alt color-secondry mr-3 mt-3"></i>{{explode("/",$info->location)[1]??''}}</h6>
+                            <h6 class="color-main"><i class="fa fa-phone-alt color-secondry mr-3 mt-3"></i>{{$info->number}}
+                            </h6>
+                        </li>
+
+                        <li>
+                            <h6 class="color-main"><i class="fas fa-map-marker-alt color-secondry mr-3 mt-3"></i>{{explode("/",$info->location)[0]??$info->location}}</h6>
+                        </li>
+
+                        @if (isset(explode("/",$info->location)[1]))
+                            <li>
+                                <h6 class="color-main"><i class="fas fa-map-marker-alt color-secondry mr-3 mt-3"></i>{{explode("/",$info->location)[1]??''}}</h6>
+                            </li>
+                        @endif
+
+                    @else
+                        <li>
+                            <h6 class="color-main"><i class="fa fa-phone-alt color-secondry mr-3 mt-3"></i>012 345 67890
+                            </h6>
+                        </li>
+
+                        <li>
+                            <h6 class="color-main"><i class="fas fa-map-marker-alt color-secondry mr-3 mt-3"></i>Frankfurt - Germany</h6>
+                        </li>
+                        <li>
+                            <h6 class="color-main"><i class="fas fa-map-marker-alt color-secondry mr-3 mt-3"></i>Izmir - Turkey</h6>
                         </li>
                     @endif
 
